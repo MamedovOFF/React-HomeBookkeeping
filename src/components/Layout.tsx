@@ -1,4 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Layout = () => {
   return (
@@ -6,9 +8,6 @@ const Layout = () => {
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <div className="container-fluid">
-            {/*<span className="navbar-brand">*/}
-            {/*  <img src={require('../assets/img/logo-bookkeping.png')} alt="" width="40" height="40" />*/}
-            {/*</span>*/}
             <button
               className="navbar-toggler"
               type="button"
@@ -57,7 +56,28 @@ const Layout = () => {
       <div className="container">
         <Outlet />
       </div>
-      <footer>footer</footer>
+      <footer className="bg-primary text-center text-white">
+        <div className="container p-4 pb-0">
+          <section className="mb-4">
+            <a className="btn btn-primary btn-floating m-1" style={{ background: '#ac2bac' }} href="#!" role="button">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a
+              className="btn btn-primary btn-floating m-1"
+              style={{ background: '#333333' }}
+              href="https://github.com/MamedovOFF"
+              role="button"
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </section>
+        </div>
+        <div className="text-center p-3" style={{ background: 'rgba(0, 0, 0, 0.2)', textDecoration: 'none' }}>
+          <a className="text-white" href="https://github.com/MamedovOFF">
+            © 2022 Follow me : M_dev
+          </a>
+        </div>
+      </footer>
     </div>
   )
 }
