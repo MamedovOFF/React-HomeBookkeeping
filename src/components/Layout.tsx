@@ -2,7 +2,9 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+const url = process.env.REACT_APP_DBURL
 const Layout = () => {
+  console.log(url)
   return (
     <div className="App d-flex flex-column min-vh-100">
       <header>

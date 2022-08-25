@@ -12,6 +12,7 @@ const Notification = () => {
     setTimeout(() => {
       clearNotification(notificationList[0].id)
     }, 2000)
+    // eslint-disable-next-line
   }, [notificationList])
 
   if (!notificationList?.length) return null
