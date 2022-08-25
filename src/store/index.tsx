@@ -27,7 +27,7 @@ const reducer = (state = defaultState, action: { type: string; payload: never })
     case 'NOTIFICATION':
       return { ...state, notification: [...state.notification, action.payload] }
     case 'ClEAR_NOTIFICATION':
-      return { ...state, notification: [] }
+      return { ...state, notification: [...state.notification.filter((el) => el.id !== action.payload)] }
     default:
       return state
   }

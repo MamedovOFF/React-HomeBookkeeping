@@ -9,7 +9,7 @@ const TodoList = ({ todosList, deleteTodo }: ITodoList) => {
   return (
     <ul className="list-group">
       {todosList.map((el, idx) => (
-        <li className="list-group-item d-flex justify-content-between align-items-baseline" key={el.id}>
+        <li className="list-group-item d-flex justify-content-between align-items-baseline li-open" key={el.id}>
           <div>
             <h5>
               {idx + 1}.{el.title}

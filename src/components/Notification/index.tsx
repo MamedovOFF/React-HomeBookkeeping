@@ -5,16 +5,13 @@ import { useEffect } from 'react'
 const Notification = () => {
   const dispatch = useDispatch()
   const notificationList = useSelector((state: IDefaultStore) => state?.notification)
-  const clearNotification = () => {
-    dispatch({ type: 'ClEAR_NOTIFICATION' })
+  const clearNotification = (id: number) => {
+    dispatch({ type: 'ClEAR_NOTIFICATION', payload: id })
   }
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      clearNotification()
-    }, 3000)
-    return () => {
-      clearTimeout(timeout)
-    }
+    setTimeout(() => {
+      clearNotification(notificationList[0].id)
+    }, 2000)
   }, [notificationList])
 
   if (!notificationList?.length) return null
