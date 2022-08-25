@@ -1,14 +1,17 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { IDefaultStore } from '../types/IDefaaultStore'
 
 const Convert = () => {
   const dispatch = useDispatch()
-  const cash = useSelector((state: any) => state?.cash)
+  const cash = useSelector((state: IDefaultStore) => state?.cash)
+
   const addCash = () => {
     dispatch({ type: 'ADD_CASH', payload: 5 })
   }
   const getCash = () => {
     dispatch({ type: 'GET_CASH', payload: 5 })
   }
+
   return (
     <div>
       <h1>{cash}</h1>

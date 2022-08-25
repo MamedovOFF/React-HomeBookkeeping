@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Layout = () => {
   return (
-    <div className="App">
+    <div className="App d-flex flex-column min-vh-100">
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <div className="container-fluid">
@@ -22,30 +22,23 @@ const Layout = () => {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                    aria-current="page"
-                  >
+                  <NavLink to="/" className="nav-link" aria-current="page">
                     Converter
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink
-                    to="/history"
-                    className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                    aria-current="page"
-                  >
+                  <NavLink to="/history" className="nav-link" aria-current="page">
                     History
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink
-                    to="/details"
-                    className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                    aria-current="page"
-                  >
+                  <NavLink to="/details" className="nav-link" aria-current="page">
                     Details
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink to="/todos" className="nav-link" aria-current="page">
+                    Todos
                   </NavLink>
                 </li>
               </ul>
@@ -56,7 +49,7 @@ const Layout = () => {
       <div className="container">
         <Outlet />
       </div>
-      <footer className="bg-primary text-center text-white">
+      <footer className="bg-primary text-center text-white mt-auto">
         <div className="container p-4 pb-0">
           <section className="mb-4">
             <a className="btn btn-primary btn-floating m-1" style={{ background: '#ac2bac' }} href="#!" role="button">

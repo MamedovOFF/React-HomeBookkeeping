@@ -1,19 +1,19 @@
-import Convert from '../page/Convert'
 import Details from '../page/Details'
 import History from '../page/History'
+import Todos from '../page/Todos'
 
 const route = [
   {
-    path: '/',
-    element: <Convert />,
-  },
-  {
-    path: '/details',
+    path: 'details',
     element: <Details />,
   },
   {
-    path: '/history',
+    path: 'history',
     element: <History />,
+  },
+  {
+    path: 'todos',
+    element: <Todos />,
   },
 ]
 
