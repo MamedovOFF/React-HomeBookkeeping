@@ -4,8 +4,15 @@ export interface ITodo {
   title: string
 }
 
+export interface INotification {
+  id: number
+  message: string
+  type: string
+}
+
 export interface IDefaultStore {
   cash: number
   todos: Array<ITodo>
   todo: ITodo | null
+  notification: Array<INotification>
 }

@@ -11,6 +11,7 @@ const defaultState: IDefaultStore = {
     },
   ],
   todo: null,
+  notification: [],
 }
 
 const reducer = (state = defaultState, action: { type: string; payload: never }) => {
@@ -23,6 +24,10 @@ const reducer = (state = defaultState, action: { type: string; payload: never })
       return { ...state, todos: [...state.todos, action.payload] }
     case 'DELETE_TODO':
       return { ...state, todos: [...state.todos.filter((el) => el.id !== action.payload)] }
+    case 'NOTIFICATION':
+      return { ...state, notification: [...state.notification, action.payload] }
+    case 'ClEAR_NOTIFICATION':
+      return { ...state, notification: [] }
     default:
       return state
   }
