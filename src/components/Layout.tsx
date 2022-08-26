@@ -16,7 +16,7 @@ const Layout = () => {
   }
 
   return (
-    <div className="App d-flex flex-column min-vh-100">
+    <div className="App d-flex flex-column">
       <header>
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <div className="container-fluid">
