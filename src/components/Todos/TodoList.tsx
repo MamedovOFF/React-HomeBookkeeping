@@ -1,4 +1,4 @@
-import { ITodo } from '../../types/IDefaaultStore'
+import { ITodo } from '../../interfaces/IDefaaultStore'
 
 interface ITodoList {
   todosList: ITodo[]

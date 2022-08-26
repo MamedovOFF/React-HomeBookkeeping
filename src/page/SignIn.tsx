@@ -1,5 +1,5 @@
 import { Formik, Form, Field } from 'formik'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import ErrorsMessage from '../components/ErrorsMessage'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
@@ -11,6 +11,7 @@ const SignIn = () => {
     email: Yup.string().email('Not Valid Mail').required('Email is Required'),
     password: Yup.string().min(6, 'Please write 6 charter').required('This Field is Required'),
   })
+  const navigate = useNavigate()
   const auth = getAuth()
   return (
     <section className="vh-100 gradient-custom" style={{ background: 'aliceblue' }}>
@@ -34,6 +35,8 @@ const SignIn = () => {
                             type: 'NOTIFICATION',
                             payload: { message: 'Sign In', type: 'Success', id: Date.now() },
                           })
+                          dispatch({ type: 'AUTH' })
+                          navigate('/')
                         })
                         .catch((error) => {
                           dispatch({

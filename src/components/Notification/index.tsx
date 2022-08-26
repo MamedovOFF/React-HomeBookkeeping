@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { IDefaultStore } from '../../types/IDefaaultStore'
+import { IDefaultStore } from '../../interfaces/IDefaaultStore'
 import { useEffect } from 'react'
 
 const Notification = () => {

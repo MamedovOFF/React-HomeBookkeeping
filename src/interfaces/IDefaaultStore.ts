@@ -11,6 +11,7 @@ export interface INotification {
 }
 
 export interface IDefaultStore {
+  auth: boolean
   cash: number
   todos: Array<ITodo>
   todo: ITodo | null

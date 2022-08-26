@@ -1,10 +1,14 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import { Navigate, NavLink, Outlet } from 'react-router-dom'
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useSelector } from 'react-redux'
+import { IDefaultStore } from '../interfaces/IDefaaultStore'
 
-const url = process.env.REACT_APP_DBURL
 const Layout = () => {
-  console.log(url)
+  const auth = useSelector((state: IDefaultStore) => state?.auth)
+
+  if (!auth) return <Navigate to="sign-in" />
+
   return (
     <div className="App d-flex flex-column min-vh-100">
       <header>
