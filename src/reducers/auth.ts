@@ -1,4 +1,4 @@
-const authReducer = (state = {}, action: { type: string; payload: never }) => {
+const authReducer = (state = { auth: false }, action: { type: string; payload: never }) => {
   switch (action.type) {
     case 'AUTH':
       return { ...state, auth: true }

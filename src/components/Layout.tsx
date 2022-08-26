@@ -1,13 +1,19 @@
-import { Navigate, NavLink, Outlet } from 'react-router-dom'
+import { Navigate, NavLink, Outlet, useNavigate } from 'react-router-dom'
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { IDefaultStore } from '../interfaces/IDefaaultStore'
 
 const Layout = () => {
-  const auth = useSelector((state: IDefaultStore) => state?.auth)
-
+  const dispatch = useDispatch()
+  const auth = useSelector((state: IDefaultStore) => state?.auth.auth)
+  const navigate = useNavigate()
   if (!auth) return <Navigate to="sign-in" />
+
+  const logOut = () => {
+    dispatch({ type: 'LOGOUT' })
+    navigate('sign-in')
+  }
 
   return (
     <div className="App d-flex flex-column min-vh-100">
@@ -49,6 +55,9 @@ const Layout = () => {
                 </li>
               </ul>
             </div>
+            <button className="btn btn-danger" onClick={() => logOut()}>
+              Log out
+            </button>
           </div>
         </nav>
       </header>
