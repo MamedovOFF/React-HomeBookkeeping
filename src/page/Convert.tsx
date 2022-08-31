@@ -1,6 +1,5 @@
-import Chart from 'react-apexcharts'
+import ReactApexChart from 'react-apexcharts'
 import { useEffect, useMemo } from 'react'
-import { ApexOptions } from 'apexcharts'
 
 const Convert = () => {
   useEffect(() => {
@@ -33,8 +32,8 @@ const Convert = () => {
   )
   return (
     <div className="d-flex justify-content-center mt-5 flex-wrap">
-      <Chart options={options.options} series={options.series} type="bar" width="500" />
-      <Chart options={{}} series={[44, 55, 41, 17, 15]} type="donut" width="380" />
+      <ReactApexChart options={options.options} series={options.series} type="bar" width="500" />
+      <ReactApexChart options={{}} series={[44, 55, 41, 17, 15]} type="donut" width="380" />
     </div>
   )
 }
