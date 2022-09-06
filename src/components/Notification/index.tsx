@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { IDefaultStore } from '../../types/IDefaaultStore'
+import { IDefaultStore } from '../../interfaces/IDefaaultStore'
 import { useEffect } from 'react'
 
 const Notification = () => {
@@ -12,6 +12,7 @@ const Notification = () => {
     setTimeout(() => {
       clearNotification(notificationList[0].id)
     }, 2000)
+    // eslint-disable-next-line
   }, [notificationList])
 
   if (!notificationList?.length) return null

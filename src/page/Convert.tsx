@@ -1,28 +1,39 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { IDefaultStore } from '../types/IDefaaultStore'
+import ReactApexChart from 'react-apexcharts'
+import { useEffect, useMemo } from 'react'
 
 const Convert = () => {
-  const dispatch = useDispatch()
-  const cash = useSelector((state: IDefaultStore) => state?.cash)
-
-  const addCash = () => {
-    dispatch({ type: 'ADD_CASH', payload: 5 })
-  }
-  const getCash = () => {
-    dispatch({ type: 'GET_CASH', payload: 5 })
-  }
-
+  useEffect(() => {
+    console.log('render')
+  })
+  const options = useMemo(
+    () => ({
+      options: {
+        chart: {
+          animations: {
+            enabled: false,
+          },
+          id: 'basic-bar',
+        },
+        xaxis: {
+          categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
+        },
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      series: [
+        {
+          name: 'series-1',
+          data: [30, 40, 45, 50, 49, 60, 70, 91],
+        },
+      ],
+    }),
+    [],
+  )
   return (
-    <div>
-      <h1>{cash}</h1>
-      <div className="d-flex">
-        <button className="btn btn-primary" onClick={() => addCash()}>
-          Add cash
-        </button>
-        <button className="btn btn-primary" onClick={() => getCash()}>
-          Get Cash
-        </button>
-      </div>
+    <div className="d-flex justify-content-center mt-5 flex-wrap">
+      <ReactApexChart options={options.options} series={options.series} type="bar" width="500" />
+      <ReactApexChart options={{}} series={[44, 55, 41, 17, 15]} type="donut" width="380" />
     </div>
   )
 }

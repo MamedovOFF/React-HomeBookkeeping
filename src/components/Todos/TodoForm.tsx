@@ -1,7 +1,7 @@
 import * as Yup from 'yup'
 import { Field, Form, Formik } from 'formik'
 import ErrorsMessage from '../ErrorsMessage'
-import { ITodo } from '../../types/IDefaaultStore'
+import { ITodo } from '../../interfaces/IDefaaultStore'
 
 interface ITodoForm {
   createTodo(payload: ITodo): void
