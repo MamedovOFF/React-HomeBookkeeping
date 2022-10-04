@@ -1,6 +1,7 @@
 import Details from '../page/Details'
 import History from '../page/History'
 import Todos from '../page/Todos'
+import Snake from '../page/Snake'
 
 const route = [
   {
@@ -14,6 +15,10 @@ const route = [
   {
     path: 'todos',
     element: <Todos />,
+  },
+  {
+    path: 'snake',
+    element: <Snake />,
   },
 ]
 

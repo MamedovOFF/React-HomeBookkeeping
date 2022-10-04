@@ -53,6 +53,11 @@ const Layout = () => {
                     Todos
                   </NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink to="/snake" className="nav-link" aria-current="page">
+                    Snake
+                  </NavLink>
+                </li>
               </ul>
             </div>
             <button className="btn btn-danger" onClick={() => logOut()}>

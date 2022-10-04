@@ -29,8 +29,7 @@ const SignIn = () => {
                     validationSchema={signInSchema}
                     onSubmit={(values) => {
                       signInWithEmailAndPassword(auth, values.email, values.password)
-                        .then((userCredential) => {
-                          console.log(userCredential)
+                        .then(() => {
                           dispatch({
                             type: 'NOTIFICATION',
                             payload: { message: 'Sign In', type: 'Success', id: Date.now() },

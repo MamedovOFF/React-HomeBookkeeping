@@ -1,0 +1,13 @@
+.SnakeGame {
+  .row_snake {
+    display: flex;
+    .cell_snake {
+      height: 50px;
+      width: 50px;
+      border: 1px solid black;
+      &.apple {
+        background-color: red;
+      }
+    }
+  }
+}
