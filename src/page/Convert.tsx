@@ -1,5 +1,5 @@
 import ReactApexChart from 'react-apexcharts'
-import { useEffect, useMemo } from 'react'
+import { useMemo } from 'react'
 
 const Convert = () => {
   const options = useMemo(
